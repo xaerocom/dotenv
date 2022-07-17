@@ -1,6 +1,7 @@
 return require("packer").startup(function()
     use('wbthomason/packer.nvim')
     use('sbdchd/neoformat')
+    use('neovim/nvim-lspconfig')
     use {'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
     use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim'}
     use("nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' })
