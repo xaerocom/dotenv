@@ -1,18 +1,10 @@
 return require("packer").startup(function()
     use('wbthomason/packer.nvim')
     use('sbdchd/neoformat')
-
     use('neovim/nvim-lspconfig')
     use 'onsails/lspkind-nvim'
-    -- show various elements of LSP as UI
-    use({
-    "glepnir/lspsaga.nvim",
-    branch = "main"
-    })
-
-    -- Autocompletion plugin
     use {
-        'hrsh7th/nvim-cmp',
+        'hrsh7th/nvim-cmp', 
         requires = {
           'hrsh7th/cmp-nvim-lsp',
           'hrsh7th/cmp-buffer',
@@ -20,19 +12,17 @@ return require("packer").startup(function()
           'hrsh7th/cmp-cmdline',
         }
     }
-
-    -- snippets
     use {
-        'hrsh7th/cmp-vsnip', requires = {
+        'hrsh7th/cmp-vsnip', 
+        requires = {
           'hrsh7th/vim-vsnip',
           'rafamadriz/friendly-snippets',
         }
     }
-
-    -- bracket autocompletion
-    use 'vim-scripts/auto-pairs-gentle'
-
-    -- Fancier statusline
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
     use {
         'nvim-lualine/lualine.nvim',
         requires = {
@@ -40,7 +30,6 @@ return require("packer").startup(function()
           'arkav/lualine-lsp-progress',
         },
     }
-
     use {'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
     use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim'}
     use("nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' })

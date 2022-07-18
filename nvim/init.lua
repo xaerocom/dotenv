@@ -5,7 +5,6 @@ require('neogit-plugin')
 require('nvim-tree-plugin')
 require('neovim-lsp-plugin')
 require('lualine-plugin')
-require('lspsaga-plugin')
 require('nvim-cmp-plugin')
 
 -- Needs to be installed!
